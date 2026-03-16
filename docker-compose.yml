@@ -1,0 +1,44 @@
+version: '3.9'
+
+services:
+  gateway:
+    build:
+      context: ./gateway
+      dockerfile: Dockerfile
+    container_name: aura-gateway
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    volumes:
+      - aura-data:/app/data
+    environment:
+      - PORT=3000
+      - DB_PATH=/app/data/aura.db
+    networks:
+      - aura-net
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:3000/health | grep -q '\"ok\":true' || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  dashboard:
+    build:
+      context: ./dashboard
+      dockerfile: Dockerfile
+    container_name: aura-dashboard
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    depends_on:
+      gateway:
+        condition: service_healthy
+    networks:
+      - aura-net
+
+volumes:
+  aura-data:
+
+networks:
+  aura-net:
+    driver: bridge

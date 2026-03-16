@@ -1,0 +1,49 @@
+# Firmware – sensitive credentials
+firmware/src/secrets.h
+
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Production builds
+dist/
+build/
+dashboard/dist/
+
+# Database files
+data/
+*.db
+*.db-shm
+*.db-wal
+
+# Firmware build
+firmware/.pio/
+firmware/.vscode/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Test artifacts
+playwright-report/
+test-results/
+coverage/
+
+# Docker
+.docker/
+
+# Temporary
+tmp/
+/tmp/

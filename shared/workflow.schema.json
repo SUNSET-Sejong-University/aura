@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "aura/workflow",
+  "title": "AURA Workflow",
+  "description": "A webhook/action triggered by a tag event.",
+  "type": "object",
+  "required": ["tag_uid", "url"],
+  "properties": {
+    "tag_uid": {
+      "type": "string",
+      "description": "NFC tag UID this workflow reacts to."
+    },
+    "event_type": {
+      "type": "string",
+      "enum": ["TAG_PLACED", "TAG_REMOVED"],
+      "default": "TAG_PLACED"
+    },
+    "name": {
+      "type": "string",
+      "description": "Human-readable workflow name."
+    },
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "description": "Target URL for the webhook request."
+    },
+    "method": {
+      "type": "string",
+      "enum": ["GET", "POST", "PUT", "PATCH"],
+      "default": "POST"
+    },
+    "headers": {
+      "type": "object",
+      "description": "Additional HTTP headers to send.",
+      "additionalProperties": { "type": "string" }
+    },
+    "body": {
+      "type": "object",
+      "description": "JSON body template. Supports {{uid}}, {{intent}}, {{event}}, {{deviceId}}, {{timestamp}} placeholders."
+    },
+    "enabled": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

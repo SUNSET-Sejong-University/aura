@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "aura/event",
+  "title": "AURA Tag Event",
+  "description": "Emitted by a Puck when an NFC tag is placed on or removed from it.",
+  "type": "object",
+  "required": ["event", "uid", "deviceId", "timestamp"],
+  "properties": {
+    "event": {
+      "type": "string",
+      "enum": ["TAG_PLACED", "TAG_REMOVED"],
+      "description": "The type of tag interaction."
+    },
+    "uid": {
+      "type": "string",
+      "description": "Hex-encoded NFC tag UID (e.g. AABBCCDD).",
+      "pattern": "^[0-9A-Fa-f]{8,14}$"
+    },
+    "deviceId": {
+      "type": "string",
+      "description": "Unique identifier of the Puck that emitted the event.",
+      "pattern": "^puck-[0-9a-f]{8}$"
+    },
+    "timestamp": {
+      "type": "integer",
+      "description": "Unix timestamp in milliseconds when the event occurred."
+    }
+  },
+  "additionalProperties": false
+}
