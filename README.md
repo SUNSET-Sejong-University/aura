@@ -1,14 +1,165 @@
-Aura bridges the gap between your physical desk/home and your web-based tools (Slack, Spotify, Home Assistant, Notion) using a "Physical-First" philosophy.
-The system consists of small, aesthetically pleasing hardware nodes (Pucks) equipped with NFC and weight sensors. When you place an object on a Puck—like your coffee mug, your glasses, or your phone—the Local AI analyzes the Context (Who is it? What time is it? What is currently on the user's calendar?). It then sends a command via a Web-based Hub to execute a "Scene."
-Example: Placing your Work ID on the Aura Puck at 8:00 AM automatically opens your "Morning Dashboard" on your PC, starts your "Focus" playlist, and puts your phone in "Do Not Disturb" mode. Removing the ID at 5:00 PM sends a "Heading home!" message to your family and turns off your office lights.
-Why it is Creative & Novel
-Most tech companies are trying to put more screens in our lives or more microphones in our rooms. Aura is "Invisible Tech." It turns the objects you already own into the "remote controls" for your digital life. It’s creative because it treats human habits as the trigger, rather than requiring a UI or a voice command.
-Why it is Business Attractive
-Anti-Subscription Fatigue: It’s a "Buy Once, Own Forever" hardware play, which is a massive relief for consumers today.
-The "Lego" Ecosystem: You can sell the base "Hub" and then sell inexpensive "Pucks" or "Tags" for every room in the house, creating a high lifetime value (LTV) per customer.
-B2B Potential: This is a goldmine for Modern Offices. Companies can give "Focus Pucks" to employees to help manage remote-work boundaries and productivity without "Big Brother" style tracking.
-Open Source Growth: By open-sourcing the "Recipe Gallery," you let the community build the integrations for every obscure web app (Jira, Trello, Discord), saving you years of development costs.
-Technical & Realistic Feasibility
-Hardware: Uses the ESP32-S3 (very cheap, supports AI at the edge) and PN532 (NFC). Total bill of materials (BOM) is under $15.
-Software: A Progressive Web App (PWA) acts as the "Brain," allowing users to drag-and-drop "If Physical Object X touches Puck Y, then do Web Action Z."
-AI: Uses a light Random Forest or Decision Tree model running locally to prevent "false triggers" (like a cat jumping on the desk).
+# Aura
+
+**Aura** bridges the gap between your physical desk/home and your web-based tools like **Slack, Spotify, Home Assistant, and Notion** through a **Physical-First** philosophy.
+
+## Core Concept
+
+Aura is built around small, aesthetically pleasing hardware nodes called **Pucks**. These devices are equipped with:
+
+- **NFC sensors**
+- **Weight sensors**
+
+When you place an everyday object on a Puck — such as:
+
+- your **coffee mug**
+- your **glasses**
+- your **phone**
+- your **work ID**
+
+the system’s **Local AI** analyzes the surrounding context, including:
+
+- **Who** is interacting with it
+- **What time** it is
+- **What’s on the user’s calendar**
+- **What state** the environment is currently in
+
+It then sends a command through a **web-based Hub** to trigger a predefined **Scene**.
+
+---
+
+## Example Use Case
+
+### Morning Routine
+Placing your **Work ID** on an Aura Puck at **8:00 AM** could automatically:
+
+- Open your **Morning Dashboard** on your PC
+- Start your **Focus playlist**
+- Put your phone into **Do Not Disturb** mode
+
+### End-of-Day Routine
+Removing the ID at **5:00 PM** could automatically:
+
+- Send a **“Heading home!”** message to your family
+- Turn off your **office lights**
+
+---
+
+## Why It’s Creative and Novel
+
+Most tech products try to push:
+
+- more **screens** into our lives, or
+- more **microphones** into our rooms
+
+Aura takes the opposite approach: **Invisible Tech**.
+
+Instead of adding another interface, it turns the objects you already use into the **remote controls for your digital life**.
+
+### What makes it unique
+- It uses **human habits** as the trigger
+- It removes the need for a traditional **UI**
+- It avoids dependence on **voice commands**
+- It makes automation feel **natural**, not forced
+
+---
+
+## Why It’s Business-Attractive
+
+### 1. Anti-Subscription Fatigue
+Aura can be positioned as a:
+
+> **“Buy Once, Own Forever”** hardware product
+
+That is a strong consumer advantage in a market full of endless subscriptions.
+
+### 2. “Lego” Ecosystem Expansion
+The business model supports a modular ecosystem:
+
+- Sell the base **Hub**
+- Upsell additional **Pucks**
+- Offer optional **Tags** for different rooms and use cases
+
+This creates strong **lifetime value (LTV)** per customer.
+
+### 3. B2B Opportunity
+Aura also has serious workplace potential.
+
+#### Office applications:
+- Focus management
+- Work-from-home boundary setting
+- Ambient productivity tools
+- Automation without invasive employee surveillance
+
+This gives businesses a productivity tool that doesn’t feel like **“Big Brother” tracking**.
+
+### 4. Open-Source Growth Engine
+By open-sourcing the **Recipe Gallery**, the community can build integrations for niche or long-tail tools such as:
+
+- Jira
+- Trello
+- Discord
+- other specialized web apps
+
+This reduces internal development burden and accelerates ecosystem growth.
+
+---
+
+## Technical Feasibility
+
+Aura is realistic from both a hardware and software perspective.
+
+### Hardware
+Potential core components include:
+
+- **ESP32-S3**  
+  - low-cost
+  - supports edge AI workloads
+
+- **PN532**
+  - reliable NFC support
+
+### Estimated BOM
+- **Total bill of materials (BOM): under $15**
+
+### Software
+A **Progressive Web App (PWA)** can serve as the central control layer, allowing users to configure automations such as:
+
+> **If Physical Object X touches Puck Y, then perform Web Action Z**
+
+This can be presented through a simple drag-and-drop workflow builder.
+
+### AI Layer
+A lightweight local model such as:
+
+- **Random Forest**, or
+- **Decision Tree**
+
+can help reduce false triggers, such as:
+
+- accidental placement
+- environmental noise
+- a cat jumping onto the desk
+
+Because the AI runs **locally**, it also improves:
+
+- privacy
+- responsiveness
+- trust
+
+---
+
+## Summary
+
+Aura is a compelling **physical-to-digital automation platform** that transforms everyday objects into intuitive triggers for web and home actions.
+
+It stands out because it is:
+
+- **screenless**
+- **habit-driven**
+- **privacy-conscious**
+- **modular**
+- **commercially scalable**
+
+In a market crowded with apps, dashboards, and voice assistants, Aura offers something sharper:
+
+> **Technology that disappears into behavior.**
