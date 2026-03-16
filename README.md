@@ -59,6 +59,16 @@ curl http://localhost:3000/health
 make install
 ```
 
+On **Windows (PowerShell)** without Make:
+
+```powershell
+.\Makefile.ps1 install
+# or manually:
+cd gateway; npm install; cd ..
+cd dashboard; npm install; cd ..
+cd tests; npm install; cd ..
+```
+
 ### Start dev servers
 
 ```bash
@@ -71,6 +81,8 @@ Or separately:
 make dev-gateway   # http://localhost:3000
 make dev-dashboard # http://localhost:5173
 ```
+
+On **Windows**: `.\Makefile.ps1 dev` opens two terminals (gateway + dashboard). Or run `.\Makefile.ps1 dev-gateway` and `.\Makefile.ps1 dev-dashboard` in separate terminals.
 
 ---
 
